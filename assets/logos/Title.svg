@@ -1,0 +1,38 @@
+svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64" fill="none">
+  <defs>
+    <!-- Upper half clip -->
+    <clipPath id="slice-top">
+      <rect x="0" y="0" width="320" height="34" />
+    </clipPath>
+    <!-- Lower half clip -->
+    <clipPath id="slice-bottom">
+      <rect x="0" y="38" width="320" height="26" />
+    </clipPath>
+  </defs>
+
+  <style>
+    .sliced-text {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 900;
+      font-size: 46px;
+      letter-spacing: -0.5px;
+      fill: #FFFFFF;
+    }
+  </style>
+
+  <!-- Top Half -->
+  <g clip-path="url(#slice-top)">
+    <text x="4" y="47" class="sliced-text">King's Gym</text>
+  </g>
+
+  <!-- Bottom Half -->
+  <g clip-path="url(#slice-bottom)">
+    <text x="4" y="47" class="sliced-text">King's Gym</text>
+  </g>
+</svg>
+'''
+
+with open('assets/logos/Title.svg', 'w', encoding='utf-8') as f:
+    f.write(svg)
+
+print("Title.svg written with exact sliced King's Gym wordmark!")
